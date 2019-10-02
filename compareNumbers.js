@@ -1,4 +1,5 @@
-const correctNumber = 7;
+//const correctNumber = 7;
+
 
 
 const compareNumbers = (correctNumber, guess) => {

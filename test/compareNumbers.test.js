@@ -6,11 +6,11 @@ import compareNumbers from '../compareNumbers.js';
 const test = QUnit.test;
 
 //test for correct
-test('will return true if user input returns 0 ', function(assert) {
+test('will return 0 if guess is correct ', function(assert) {
     
     //Arrange
     // Set up your parameters and expectations
-    const guess = 0;
+    const guess = 7;
     const correctNumber = 7;
     
     
@@ -23,13 +23,50 @@ test('will return true if user input returns 0 ', function(assert) {
     //Assert
     // Make assertions about what is expected valid result
     
-    assert.equal(result, true);
+    assert.equal(result, 0);
 });
 
 
 //test for 1 (too high)
-
+test('will return 1 if guess is too high ', function(assert) {
+    
+    //Arrange
+    // Set up your parameters and expectations
+    const guess = 13;
+    const correctNumber = 7;
+    
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    
+    const result = compareNumbers(correctNumber, guess);
+    
+    
+    //Assert
+    // Make assertions about what is expected valid result
+    
+    assert.equal(result, 1);
+});
 
 
 
 //test for -1 (too low)
+test('will return -1 if guess is too low ', function(assert) {
+    
+    //Arrange
+    // Set up your parameters and expectations
+    const guess = 3;
+    const correctNumber = 7;
+    
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    
+    const result = compareNumbers(correctNumber, guess);
+    
+    
+    //Assert
+    // Make assertions about what is expected valid result
+    
+    assert.equal(result, -1);
+});
