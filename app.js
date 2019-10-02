@@ -1,5 +1,5 @@
 import compareNumbers from './compareNumbers.js';
-const correctNumber = 7;
+//const correctNumber = 7;
 
 // initialize DOM elements
 
@@ -11,7 +11,10 @@ const userReply = document.getElementById('reply-to-user');
 
 let numGuesses = 4;
 
+//random number
+let correctNumber = Math.floor(Math.random() * 20) + 1;
 
+console.log(correctNumber);
 
 
 
@@ -35,16 +38,20 @@ submitButton.addEventListener('click', () => {
 
 // comparing guesses with compareNumbers()
 
-    if ((compareNumbers(guess, correctNumber) === 1) && (numGuesses > 0)) {
-        guessReply = 'You guessed too low!';
+    if ((compareNumbers(correctNumber, guess) === 1) && (numGuesses > 0)) {
+        guessReply = 'You guessed too high!';
+        //trying to clear input box after incorrect entry
+        
     }
-    else if ((compareNumbers(guess, correctNumber) === -1) && (numGuesses > 0)) {
-        guessReply = 'You guessed too high';
+    else if ((compareNumbers(correctNumber, guess) === -1) && (numGuesses > 0)) {
+        guessReply = 'You guessed too low';
     }
 
-    else if ((compareNumbers(guess, correctNumber) === 0) && (numGuesses > 0)) {
+    else if ((compareNumbers(correctNumber, guess) === 0) /*&& (numGuesses > 0)*/) {
         guessReply = 'Good Job!  You guessed correctly.';
         submitButton.disabled = true;
+        document.getElementById('rem-guesses').style.opacity = 0;
+      
     }
 //  disables button if guessed correctly or tries limit reached
     else {
