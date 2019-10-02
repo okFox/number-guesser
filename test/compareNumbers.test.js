@@ -11,13 +11,13 @@ test('will return true if user input returns 0 ', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const guess = 0;
-    const magicNumber = 7;
+    const correctNumber = 7;
     
     
     //Act 
     // Call the function you're testing and set the result to a const
     
-    const result = compareNumbers(magicNumber, guess);
+    const result = compareNumbers(correctNumber, guess);
     
     
     //Assert
