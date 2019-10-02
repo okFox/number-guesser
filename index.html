@@ -5,13 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+  
+    <title>Number Guessing Game</title>
 </head>
 
 <body>
+    <header>
+        <p>Want to play a game?  I'll give you 4 tries to guess the number I'm thinking.  It's between 1 and 20. </p>
+    </header>
+<div id='user-input'>
+        <label>Guess a number:</label>
 
-    <script src="app.js"></script>
+        <input type="number" id="guess" min="0" max="20" >
+       
+        <button id='submit-button'>Submit Guess</button>
+</div>
+
+
+
+
+
+<div>Result:  <span id="reply-to-user"></span></div>
+
+<div>Remaining Guesses: <span id="rem-guesses"></span></div>
+
+
+    <script type= 'module' src="app.js"></script>
 </body>
 
 </html>
