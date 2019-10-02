@@ -14,8 +14,18 @@
     <header>
         <p>Want to play a game?  I'll give you 4 tries to guess the number I'm thinking.  It's between 1 and 20. </p>
     </header>
+<div id='user-input'>
+        <label>Guess a number:</label>
 
-    <script src="app.js"></script>
+        <input type="number" id="guess" name="userGuess"
+               min="1" max="20">
+</div>
+
+<input type="submit" value="Submit Guess">
+<div>Remaining Guesses: <span id="rem-guesses"></span></div>
+
+
+    <script type= 'module' src="app.js"></script>
 </body>
 
 </html>
