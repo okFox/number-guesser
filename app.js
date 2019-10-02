@@ -12,6 +12,7 @@ const userReply = document.getElementById('reply-to-user');
 let numGuesses = 4;
 
 //random number
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 let correctNumber = Math.floor(Math.random() * 20) + 1;
 
 console.log(correctNumber);
