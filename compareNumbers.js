@@ -11,18 +11,9 @@ const compareNumbers = (correctNumber, guess) => {
         return 1;
     }
   
+// keep track of number of guesses
+
 };
 
 
-
-
-
-
-/* THIS WORKS
-const compareNumbers = (correctNumber, guess) => {
-    if (guess === 0) return true;
-
-    return false;
-};
-*/
 export default compareNumbers;
