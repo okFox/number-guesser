@@ -19,10 +19,10 @@ let numGuesses = 4;
 
 // event handling
 
-currentGuess.addEventListener('click', () => {
+submitButton.addEventListener('click', () => {
 
 // change input to integer
-    let guess = parseInt(guess.value); 
+    let guess = parseInt(currentGuess.value); 
    
  
 // '-=' Sums up left and right operand values and assign the result to the left operand.
@@ -30,20 +30,21 @@ currentGuess.addEventListener('click', () => {
 
 
 // messages for user
-    let remGuesses = 'You have' + numGuesses + ' guesses left';
+    let numTriesReply = 'You have ' + numGuesses + ' guesses left';
     let guessReply = '';
 
 // comparing guesses with compareNumbers()
 
     if ((compareNumbers(guess, correctNumber) === 1) && (numGuesses > 0)) {
-        guessReply = 'You guessed too high!';
+        guessReply = 'You guessed too low!';
     }
     else if ((compareNumbers(guess, correctNumber) === -1) && (numGuesses > 0)) {
-        guessReply = 'You guessed too low';
+        guessReply = 'You guessed too high';
     }
 
     else if ((compareNumbers(guess, correctNumber) === 0) && (numGuesses > 0)) {
         guessReply = 'Good Job!  You guessed correctly.';
+        submitButton.disabled = true;
     }
 //  disables button if guessed correctly or tries limit reached
     else {
@@ -51,7 +52,7 @@ currentGuess.addEventListener('click', () => {
         guessReply = 'Sorry all your guesses are used up.';
     }
 // shows the user how many guesses they have left and responds to guesses.
-    remGuesses.textContent = remGuesses;
+    remGuesses.textContent = numTriesReply;
     userReply.textContent = guessReply;    
 });
 
